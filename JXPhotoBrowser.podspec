@@ -14,9 +14,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Sources/JXPhotoBrowser/*'
 
-  # 这个是关键！必须明确指定资源相对路径
   s.subspec 'VXResource' do |ss|
-    ss.source_files = []
-    ss.resources = ['Sources/JXPhotoBrowser/PrivacyInfo.xcprivacy']
+   ss.resources = 'AFNetworking/PrivacyInfo.xcprivacy'
   end
 end
