@@ -3,19 +3,20 @@ Pod::Spec.new do |s|
   s.version          = '3.1.5'
   s.summary          = 'Elegant photo browser in Swift.'
   s.description      = 'Elegant photo browser in Swift. Inspired by WeChat.'
-  
+
   s.homepage         = 'https://github.com/JiongXing/PhotoBrowser'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'JiongXing' => 'liangjiongxing@qq.com' }
-  s.source           = { :git => 'https://github.com/JiongXing/PhotoBrowser.git', :tag => s.version.to_s }
-  
+  s.source           = { :git => 'https://github.com/voidxinxin/PhotoBrowser.git', :tag => s.version.to_s }
+
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
+
   s.source_files = 'Sources/JXPhotoBrowser/*'
-  
-  # Add subspec with resources
+
+  # 这个是关键！必须明确指定资源相对路径
   s.subspec 'VXResource' do |ss|
-    ss.source_files = 'Sources/JXPhotoBrowser/*'
-    ss.resources = ['Sources/JXPhotoBrowser/PrivacyInfo.xcprivacy']  # Specify the resource file
+    ss.source_files = []
+    ss.resources = ['Sources/JXPhotoBrowser/PrivacyInfo.xcprivacy']
   end
 end
