@@ -14,7 +14,9 @@ Pod::Spec.new do |s|
     s.swift_version = '5.0'
     s.source_files = 'Sources/JXPhotoBrowser/*'
     s.subspec 'VXResource' do |ss|
-       ss.resources = 'Sources/JXPhotoBrowser/PrivacyInfo.xcprivacy'
+      ss.resources = ['Sources/JXPhotoBrowser/PrivacyInfo.xcprivacy']
+      ss.pod_target_xcconfig = { 'COPY_PHASE_STRIP' => 'NO' }
     end
+
     
 end
